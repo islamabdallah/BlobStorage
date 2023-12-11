@@ -8,12 +8,10 @@ namespace BlobStorageDemo2.Services.Implementation
 {
     public class UploadService : IUploadService
     {
-        private readonly IUploadService _uploadService;
 
         private readonly IConfiguration _configuration;
-        public UploadService(IUploadService uploadService, IConfiguration configuration)
+        public UploadService( IConfiguration configuration)
         {
-            _uploadService = uploadService;
             _configuration = configuration;
         }
         public async Task<string> UploadAsync(Stream fileStream, string fileName, string contentType)

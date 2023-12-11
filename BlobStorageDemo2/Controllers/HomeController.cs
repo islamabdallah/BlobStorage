@@ -23,9 +23,9 @@ namespace BlobStorageDemo2.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddFile(IFormFile file)
+        public IActionResult AddFile(IFormFile tesFile)
         {
-          var result =   _uploadService.UploadAsync(file.OpenReadStream(), file.FileName, file.ContentType);
+          var result =   _uploadService.UploadAsync(tesFile.OpenReadStream(), tesFile.FileName, tesFile.ContentType);
             return View(result);
         }
 
